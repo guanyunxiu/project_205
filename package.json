@@ -1,0 +1,87 @@
+{
+  "name": "auto-repair-management",
+  "version": "1.0.0",
+  "description": "汽修维保管理桌面软件",
+  "main": "dist-electron/main/index.js",
+  "author": "Auto Repair Team",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build && electron-builder",
+    "build:unpack": "vite build && electron-builder --dir",
+    "build:win": "vite build && electron-builder --win",
+    "build:mac": "vite build && electron-builder --mac",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.6.8",
+    "better-sqlite3": "^11.0.0",
+    "dayjs": "^1.11.10",
+    "element-plus": "^2.7.0",
+    "file-saver": "^2.0.5",
+    "numeral": "^2.0.6",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.10.1",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^20.11.30",
+    "@types/numeral": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-rebuild": "^3.2.9",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.23.0",
+    "node-gyp": "^12.4.0",
+    "prebuild-install": "^7.1.3",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.3",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.2.6",
+    "vite-plugin-electron": "^0.28.4",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vue-tsc": "^2.0.7"
+  },
+  "build": {
+    "appId": "com.autorepair.management",
+    "productName": "汽修维保管理系统",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist",
+      "dist-electron"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.business"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

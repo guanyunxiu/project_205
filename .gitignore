@@ -1,3 +1,11 @@
+# Electron 构建产物
+dist-electron/
+release/
+
+# Vite
+dist/
+.vite/
+
 # 依赖与构建产物
 node_modules/
 vendor/
